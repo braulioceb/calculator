@@ -1,13 +1,24 @@
-from calculator.app.operaciones import root
-import pytest 
+import pytest
+from unittest.mock import patch
 
-def obtener_datos_test_multiplica():
-    return [(-2, 2, False), (1, 1, 1), (4, 2, 2)]
+from calculator.app.calculator import calculator
 
-@pytest.mark.parametrize("num1, num2, esperado", obtener_datos_test_multiplica())
-def test_multiplica_parametrize(num1, num2, esperado):
-    assert root(num1, num2) == esperado
 
-@pytest.mark.xfail
-def test_multiplica_falla():
-    assert root(2, 2) == "pez"
+def get_calculator_test_data():
+    return [
+        (["1", "2", "3"], 5),
+        (["2", "1", "1"], 0),
+        (["3", "0", "0"], 0),
+        (["4", "4", "1"], 4),
+        (["4", "1", "0"], "No division by zero is allowed."),
+        (["6", "4", "2"], 2),
+    ]
+
+
+@pytest.mark.parametrize(
+    "inputs, expected",
+    get_calculator_test_data(),
+)
+def test_calculator(inputs, expected):
+    with patch("builtins.input", side_effect=inputs):
+        assert calculator() == expected
