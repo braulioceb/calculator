@@ -1,5 +1,5 @@
 import pytest
-from app.calculator import calculator
+from calculator.app.calculator import calculator
 from unittest.mock import patch
 
 def get_data_test_calculator():
@@ -7,7 +7,7 @@ def get_data_test_calculator():
         (["1", "2", "3"], 5), 
         (["2", "1", "1"], 0), 
         (["3", "0", "0"], 0), 
-        (["4", "1", "0"], 4),
+        (["4", "4", "1"], 4),
         (["4", "1", "0"], "No division by zero is allowed.")
     ]
 

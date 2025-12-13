@@ -1,4 +1,4 @@
-from app.operaciones import sum, subtract, multiply, divide
+from calculator.app.operaciones import sum, subtract, multiply, divide
 
 def calculator():
     """ """
@@ -14,12 +14,16 @@ def calculator():
     
     if option == "1":
         print("Result: ",sum(num1,num2))
+        return sum(num1,num2)
     elif option == "2":
         print("Result: ",subtract(num1,num2))
+        return subtract(num1,num2)
     elif option == "3":
         print("Result: ",multiply(num1,num2))
+        return multiply(num1,num2)
     elif option == "4":
         print("Result: ",divide(num1,num2))
+        return divide(num1,num2)
 
 if __name__ == "__main__":
     calculator()

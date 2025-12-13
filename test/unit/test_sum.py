@@ -1,4 +1,4 @@
-from app.operaciones import sum
+from calculator.app.operaciones import sum
 import pytest
 
 
@@ -11,4 +11,4 @@ def test_suma_parametrize(num1, num2, esperado):
 
 @pytest.mark.xfail
 def test_suma_falla():
-    assert sum("2", "2") == 5
+    assert sum(2, 2) == 5

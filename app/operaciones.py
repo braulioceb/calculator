@@ -43,7 +43,7 @@ def decorador(func):
         Returns:float:  evaluate function inputs on func arg
         """
         if b == 0:
-            "No division by zero is allowed."
+            return "No division by zero is allowed."
         else:
             return func(a,b)    
     return inner
