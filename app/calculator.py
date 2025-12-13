@@ -1,4 +1,4 @@
-from calculator.app.operaciones import sum, subtract, multiply, root
+from calculator.app.operaciones import sum, subtract, multiply, divide, root
 
 def calculator():
     """ """
