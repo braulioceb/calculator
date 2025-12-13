@@ -64,5 +64,5 @@ jobs:
     
     - name: Test with pytest
       run: |
-        pytest tests/unit/test_root.py -v
-        pytest tests/integration/ -v
+        pytest test/unit/test_root.py -v
+        pytest test/integration/ -v
