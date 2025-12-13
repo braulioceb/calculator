@@ -1,0 +1,13 @@
+on:
+  push:
+    branches: [power]
+jobs:
+  lint_and_test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v4
+        with: python-version: '3.11'
+      - run: pip install -r requirements.txt
+      - run: flake8 src/ tests/ --max-line-length=200
+      - run: pytest tests/unit --maxfail=5 --disable-warnings -v

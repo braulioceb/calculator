@@ -69,3 +69,25 @@ if __name__ == "__main__":
       "divide 1 / 0: \n"
    ) 
    divide(1, 0)
+
+def power(a,b):
+    """
+    exponential operator a ** b.
+    Args
+      a: base
+      b: exponential
+    Returns: a ** b
+    """
+    # 0 ** 0 es indefinido
+    if a == 0 and b == 0:
+        return False
+
+    # 0 elevado a un exponente negativo
+    if a == 0 and b < 0:
+        return False
+
+    # Base negativa con exponente no entero
+    if a < 0 and not float(b).is_integer():
+        return False
+
+    return a ** b
