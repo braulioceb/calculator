@@ -59,6 +59,33 @@ def divide(a:float, b:float) -> float:
     """    
     return a / b
 
+def root(a,n):
+    """
+    Args:
+      a:float: first number
+      b:float: second number
+
+    Returns:float: second-root from first number
+    """    
+    if n == 0:
+        return False
+
+    # No permitir índices negativos
+    if n < 0:
+        return False
+
+    # 0 tiene raíz válida solo con índice positivo
+    if a == 0:
+        return True
+
+    # Raíz de número negativo
+    if a < 0:
+        # El índice debe ser entero e impar
+        if int(n) % 2 == 0:
+            return False
+
+    return a ** (1/n)
+
 if __name__ == "__main__":
    print(
       "------ Pruebas unitarias ------ \n",
