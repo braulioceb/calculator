@@ -4,7 +4,7 @@ from unittest.mock import patch
 from calculator.app.calculator import calculator
 
 
-def get_data_test_calculator():
+def get_calculator_test_data():
     return [
         (["1", "2", "3"], 5),
         (["2", "1", "1"], 0),
@@ -17,8 +17,8 @@ def get_data_test_calculator():
 
 @pytest.mark.parametrize(
     "inputs, expected",
-    get_data_test_calculator(),
+    get_calculator_test_data(),
 )
-def test_add_numbers(inputs, expected):
+def test_calculator(inputs, expected):
     with patch("builtins.input", side_effect=inputs):
         assert calculator() == expected
